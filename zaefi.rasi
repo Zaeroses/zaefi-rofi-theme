@@ -1,0 +1,122 @@
+configuration {
+
+  font: "Envy Code R 19";
+  show-icons: true;
+
+}
+
+* {
+
+  dark-brown:           #1C1B1A;
+  brown:                #2A2423;
+  light-brown:          #3E342D;
+  green:                #9CBF68;
+  lime-green:           #B5CC60;
+
+  text-white:           #ffffffcc;
+  text-black:           @dark-brown;
+
+  ////////////////////////////////////////////////
+
+  header-color:         @lime-green;
+  header-label-color:   @text-black;
+  header-input-color:   @text-black;
+
+  background:           #1C1B1Acc;
+
+  highlighted-text:     bold underline #ffffffff;
+
+  width:                35em;
+  number-of-elements:   8;
+
+  header-padding:       1em;
+  list-padding:         0.5em 2.5em 0.5em 2.5em;
+
+  element-text-color:   @text-white;
+
+  selected-background:  @light-brown;
+  selected-icon:        @lime-green;
+
+  element-padding:      0.25em;
+  element-text-margin:  0em -29.5em 0em 0.9em;
+  element-text-padding: 0em 0em 0em 2.4em;
+
+  element-icon-size:    1.2em;
+  element-icon-padding: 0.3em 0.65em 0.3em 0.65em;
+  element-icon-margin:  0em 100em 0em 0em;
+
+  element-corners:      0.9em;
+
+  prompt-margin:        0em 1em 0em 0em;
+
+  ////////////////////////////////////////////////
+
+  background-color: transparent;
+  highlight: @highlighted-text;
+
+}
+
+window {
+  width: @width;
+}
+
+inputbar {
+  color: @header-label-color;
+  padding: @header-padding;
+  background-color: @header-color;
+
+  margin: -1px -1px -1px -1px;
+}
+
+prompt {
+  margin: @prompt-margin;
+}
+
+listview {
+  padding: @list-padding;
+  background-color: @background;
+  lines: @number-of-elements;
+
+  dynamic: false;
+  margin: -1px -1px -1px -1px;
+}
+
+element {
+  padding: @element-padding;
+  color: @element-text-color;
+
+  children: [
+    element-text, element-icon
+  ];
+}
+
+element-text {
+  border-radius: @element-corners;
+  padding: @element-text-padding;
+  margin: @element-text-margin;
+
+  text-color: inherit;
+  vertical-align: 0.5;
+}
+
+element-icon {
+  size: @element-icon-size;
+  padding: @element-icon-padding;
+  margin: @element-icon-margin;
+  border-radius: @element-corners;
+
+  text-color: inherit;
+}
+
+element-text selected.normal {
+  background-color: @selected-background;
+}
+
+element-icon selected.normal {
+  background-color: @selected-icon;
+}
+
+entry, prompt, case-indicator {
+    text-font: inherit;
+    text-color: inherit;
+}
